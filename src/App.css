@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.title-card {
+  background-color: #ee7e22;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+.container-cart {
+  position: relative;
+  margin-right: 10px;
+
+}
+
+.circle-notification {
+  background-color: #ee7e22;
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -10px;
+  left: 20px;
+
+}
+
+.circle-notification p {
+  font-size: 12px;
+}
+
+.card {
+  border: 1px solid #ffb980;
+  border-radius: 10px;
+  transition: transform 0.1s ease-in-out;
+}
+
+.border-Cst {
+  border: 1px solid rgb(58, 204, 58);
+}
+
+.border-Sst {
+  border: 1px solid rgb(236, 81, 34);
+}
+
+.card:hover {
+  transform: scale(1.02);
+  border: 1px solid #ff8b2c;
+  box-shadow: 0px 0px 5px 0px #ff790cbb;
+
+}
+
+.card:hover .back-Cst {
+  box-shadow: 0px 0px 10px 0px rgb(0, 150, 0);
+  border: 1px solid rgb(0, 150, 0);
+}
+
+.card:hover .back-Sst {
+  box-shadow: 0px 0px 10px 0px rgb(190, 44, 0);
+  border: 1px solid rgb(190, 44, 0);
+}
+
+.img-product {
+  width: 100%;
+}
+
+.medal {
+  position: absolute;
+  width: 25px;
+  top: 0;
+  left: 10px;
+
+}
+
+
+
+
+.btn-addCart {
+  border: none;
+  background-color: #ee7e22;
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+
+.btn-addCart:hover {
+  opacity: 0.9;
+}
+
+.stock-card {
+  position: absolute;
+  top: -15px;
+  right: 10px;
+  border-radius: 5px;
+  padding: 2px 5px;
+  color: #fff;
+}
+
+.back-Cst {
+  background-color: rgb(58, 204, 58);
+}
+
+
+.back-Sst {
+  background-color: rgb(236, 81, 34);
+}
+
+.precio {
+  color: #ee7e22;
+  font-weight: 700;
+}
+
+.head-itemList {
+  background: #969082;
+  width: 100%;
+  height: 200px;
+  position: absolute;
+  top: 80px;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+
+}
+
+.title-container {
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.mt-6 {
+  margin-top: 70px;
+}
+
+
+
+.container-footer {
+  background-color: #969082;
+  padding: 20px;
+  border-radius: 15px 15px 0 0;
+  color: #fff;
+}
+
+.scroll-top {
+  /* background-color: #6a6a6a; */
+  background-color: #969082;
+  box-shadow: 0px 0px 5px 0px rgba(15, 15, 15, 0.733);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 50px;
+  right: 25px;
+
+
+}
+
+.scroll-top:hover {
+  cursor: pointer;
+}
+
+.oculto {
+  display: none;
+}
+
+@media screen and (max-width: 1200px) {
+  .card {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .container-footer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container-footer img {
+    width: 200px;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .o1 {
+    order: 1 !important;
+  }
+
+  .o2 {
+    order: 3 !important;
+  }
+
+  .o3 {
+    order: 2 !important;
+  }
+}
+
+.o1 {
+  order: 1;
+}
+
+.o2 {
+  order: 2;
+}
+
+.o3 {
+  order: 3;
+}
+
+.navbar {
+  padding: 20px;
+  z-index: 999;
+}
+
+.swal-wide {
+  width: 200px !important;
+  z-index: 9999;
+}
+
+#swal2-title {
+  font-size: 20px;
+}
+
+.swal2-icon.swal2-success {
+  font-size: 10px;
+
+}

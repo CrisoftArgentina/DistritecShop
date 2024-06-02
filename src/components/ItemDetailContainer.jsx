@@ -1,13 +1,14 @@
-/* eslint-disable react/prop-types */
-import Card from './Card'
+import { useParams } from "react-router-dom";
+import useFetchProductoCodigo from "../hooks/useFetchProductoCodigo";
+import CardDetail from './CardDetail'
+const ItemDetailContainer = () => {
+    const { id } = useParams()
+    const { data: info, cargando } = useFetchProductoCodigo(id);
 
-const ItemListContainer = ({ info, cargando } ) => {
     return (
         <div>
-            <div className='head-itemList'>
-            </div>
-            <div className="container mb-3 mt-6">
-                <div className="row mt-4">
+            <div className="ps-5 pe-5 mb-3 mt-2 ">
+                <div className="row mt-4 d-flex justify-content-center">
                     {
                         cargando ?
                             <div className="loader-container">
@@ -21,8 +22,8 @@ const ItemListContainer = ({ info, cargando } ) => {
                                     info && info.length > 0 ? (
                                         <>
                                             {info.map((item) => (
-                                                <div className="col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3 mb-4" key={item.codigo}>
-                                                    <Card
+                                                <div key={item.codigo}>
+                                                    <CardDetail
                                                         titulo={item.tipoproducto}
                                                         url={`https://portal-distritec.com.ar/imgProd/${item.img}.jpg`}
                                                         precio={item.precio}
@@ -36,7 +37,7 @@ const ItemListContainer = ({ info, cargando } ) => {
                                         </>
                                     ) : (
                                         <div>
-                                            No hay productos disponibles.
+                                            Producto no disponible.
                                         </div>
                                     )
                                 }
@@ -47,5 +48,4 @@ const ItemListContainer = ({ info, cargando } ) => {
         </div>
     )
 }
-
-export default ItemListContainer;
+export default ItemDetailContainer

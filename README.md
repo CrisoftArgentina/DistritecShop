@@ -1,6 +1,6 @@
 # Portal Distritec v.1.0.1
 
-Este proyecto va a ser una combinación entre un ecommerce y un portal de usuario. El objetivo del mismo con cada usuario poder realizar compras, ver los estados de los pedidos, facturas, realizar presupuestos.
+Este proyecto va a ser una combinación entre un ecommerce y un portal de usuario. El objetivo del mismo es que con cada usuario poder realizar compras, ver los estados de los pedidos, facturas, realizar presupuestos.
 
 ## v.1.0.1
 ### Modulos

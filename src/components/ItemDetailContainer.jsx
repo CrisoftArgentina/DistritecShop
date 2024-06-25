@@ -3,8 +3,7 @@ import useFetchProductoCodigo from "../hooks/useFetchProductoCodigo";
 import CardDetail from './CardDetail'
 const ItemDetailContainer = () => {
     const { id } = useParams()
-    const { data: info, cargando } = useFetchProductoCodigo(id);
-
+    const { info, cargando } = useFetchProductoCodigo(id);
     return (
         <div>
             <div className="ps-5 pe-5 mb-3 mt-2 ">
@@ -22,7 +21,7 @@ const ItemDetailContainer = () => {
                                     info && info.length > 0 ? (
                                         <>
                                             {info.map((item) => (
-                                                <div key={item.codigo}>
+                                                <div key={item.id}>
                                                     <CardDetail
                                                         titulo={item.tipoproducto}
                                                         url={`https://portal-distritec.com.ar/imgProd/${item.img}.jpg`}
@@ -31,6 +30,7 @@ const ItemDetailContainer = () => {
                                                         descripcion={item.descripcion}
                                                         stock={item.Stock}
                                                         destacado={item.destacado}
+                                                        id={item.id}
                                                     />
                                                 </div>
                                             ))}

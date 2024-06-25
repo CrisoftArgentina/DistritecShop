@@ -167,7 +167,7 @@ h3 {
 }
 
 .btn-addCart {
-  border: none;
+  border: 1px solid #ee7e22;
   background-color: #ee7e22;
   color: #fff;
   padding: 5px 15px;
@@ -306,6 +306,16 @@ h3 {
 
 }
 
+.carrito {
+  border: none;
+  background-color: transparent;
+
+}
+
+.offcanvas {
+  z-index: 9999;
+}
+
 .scroll-top:hover {
   cursor: pointer;
 }
@@ -338,16 +348,32 @@ h3 {
   }
 
   .o2 {
-    order: 3 !important;
+    order: 4 !important;
   }
 
   .o3 {
     order: 2 !important;
   }
 
+  .o4 {
+    order: 2 !important;
+  }
+
   .container-search {
     justify-content: center;
   }
+  .btn-user{
+    margin-top: 10px !important;
+  }
+  .lbl-sesion {
+    color:#000000;
+    display: block !important;
+  }
+
+}
+.lbl-sesion {
+  color:#000000;
+  display: none;
 }
 
 .o1 {
@@ -359,6 +385,10 @@ h3 {
 }
 
 .o3 {
+  order: 3;
+}
+
+.o4 {
   order: 3;
 }
 
@@ -468,7 +498,7 @@ h3 {
 }
 
 .column-rigth-carousel {
-  z-index: 9999;
+  z-index: 9;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -575,6 +605,7 @@ h3 {
   padding: 5px 10px;
   color: #fff;
 }
+
 .btn-cant:hover {
   cursor: pointer !important;
 }
@@ -585,4 +616,183 @@ h3 {
 
 .btn-cant-right {
   border-radius: 0px 5px 5px 0px;
+}
+
+.card-carrito {
+  border: 1px solid #ffb980;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.card-carrito-codigo {
+  color: #f77e1c;
+}
+
+.card-carrito-footer {
+  padding: 8px;
+  border-radius: 10px;
+  background-color: #fa8627;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: #fff;
+}
+
+.btn-carrito {
+  padding: 5px 10px;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+}
+
+.btn-carrito-buy {
+  background-color: #ee7e22;
+}
+
+.btn-carrito-clear {
+  background-color: #969082;
+}
+
+.container-carrito-delete {
+  background-color: #fc3a17;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  position: absolute;
+  right: 10px;
+  top: -15px;
+  cursor: pointer;
+}
+
+.container-carrito-delete:hover {
+  background-color: #ff5537;
+}
+
+.container-confirm {
+  border: 1px solid #dadada;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.oculto {
+  display: none !important;
+}
+
+.pointer:hover {
+  cursor: pointer;
+}
+
+.btn-user {
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0;
+  margin-right: 10px;
+}
+
+.circle-user {
+  background-color: #ee7e22;
+  width: 35Px;
+  height: 35px;
+  border-radius: 50%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.btn-iniciar {
+  border: 1px solid #ee7e22;
+  background-color: #ee7e22;
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+
+.btn-iniciar:hover {
+  background-color: #f87408;
+  border: 1px solid #f87408;
+}
+
+.btn-iniciar-negative {
+  border: 1px solid #cf640d;
+  background-color: transparent !important;
+  color: #f87408;
+  padding: 5px 15px;
+  border-radius: 5px;
+}
+
+.btn-iniciar-negative:hover {
+  background-color: #f87408 !important;
+  border: 1px solid #f87408 !important;
+}
+
+.zindex {
+  z-index: 9999 !important;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.popover-item {
+  cursor: pointer;
+}
+
+.popover-item:hover {
+  color: #cf640d;
+}
+
+.popover-item:hover .popover-item img:hover {
+  fill: #cf640d !important
+}
+
+.link-decoration {
+  text-decoration: none;
+  color: #000000
+}
+
+.head-popover {
+  background-color: #f87408;
+  color: #fff;
+}
+
+#popover-contained {
+  border: 1px solid #ffa963;
+}
+.state-ship {
+  display: flex; 
+  justify-content: center;
+  gap:5px;
+  padding: 3px 10px;
+  max-width: 140px;
+  border-radius: 5px;
+  color: #fff;
+}
+.envio-pendiente {
+  background-color: #eb4040;
+}
+.envio-progreso {
+  background-color: #f79516;
+}
+.envio-entregado {
+  background-color: #11cc00;
+}
+.text-one {
+  font-size: 12px;
+}
+.swal2-confirm-custom  {
+background-color: #f87408 !important;
 }

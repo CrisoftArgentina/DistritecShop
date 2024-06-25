@@ -1,10 +1,16 @@
+
 // eslint-disable-next-line no-unused-vars
-import React, { useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { Link } from "react-router-dom";
 import CartWidget from './CartWidget'
 import SearchProduct from './SearchProduct';
+import { CantidadCarritoContext } from '../contexts/CantidadCarritoContext';
+import LoginPopover from './LoginPopover';
+
 
 const NavBar = () => {
+    const { cantidad } = useContext(CantidadCarritoContext);
+
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid o1">
@@ -14,12 +20,13 @@ const NavBar = () => {
 
                 <div className='d-flex o3 align-items-center gap-2'>
                     <CartWidget
-                        cantidad={3}
+                        cantidad={isNaN(cantidad) ? 0 : cantidad}
                     />
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                 </div>
+
                 <div className="collapse navbar-collapse o2" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
@@ -49,11 +56,9 @@ const NavBar = () => {
                         </li>
                     </ul>
                     <SearchProduct />
+                    <LoginPopover />
                 </div>
-
             </div>
-
-
         </nav>
     )
 }

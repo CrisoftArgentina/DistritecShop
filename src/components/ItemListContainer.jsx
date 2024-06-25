@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import Card from './Card'
 
-const ItemListContainer = ({ info, cargando } ) => {
+const ItemListContainer = ({ info, cargando }) => {
     return (
         <div>
             <div className='head-itemList'>
@@ -21,7 +21,7 @@ const ItemListContainer = ({ info, cargando } ) => {
                                     info && info.length > 0 ? (
                                         <>
                                             {info.map((item) => (
-                                                <div className="col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3 mb-4" key={item.codigo}>
+                                                <div className="col-sm-12 col-md-6 col-lg-6 col-xl-3 col-xxl-3 mb-4" key={item.id}>
                                                     <Card
                                                         titulo={item.tipoproducto}
                                                         url={`https://portal-distritec.com.ar/imgProd/${item.img}.jpg`}
@@ -30,6 +30,7 @@ const ItemListContainer = ({ info, cargando } ) => {
                                                         descripcion={item.descripcion}
                                                         stock={item.Stock}
                                                         destacado={item.destacado}
+                                                        id={item.id}
                                                     />
                                                 </div>
                                             ))}

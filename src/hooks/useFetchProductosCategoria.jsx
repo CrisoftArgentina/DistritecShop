@@ -1,22 +1,37 @@
 import { useEffect, useState } from "react";
+import { db } from "../firebaseConfig";
+import { getDocs, collection, query, where } from "firebase/firestore";
 
-const useFetchProductosCategoria = ( categoria , page ) => {    
-    const [ info, setInfo ] = useState(null)
-    const [ cargando, setCargando ] = useState(true)
+const useFetchProductos = (tipoproducto) => {
+    const [info, setInfo] = useState(null);
+    const [cargando, setCargando] = useState(true);
+    const [cantidadDatos, setcantidadDatos] = useState(0)
 
     useEffect(() => {
-        setCargando(true)
-        fetch(`http://api.portal-distritec.com.ar/api/ProductosCategoria?categoria=${categoria}&page=${page}`)
-        .then( response => response.json())
-        .then( datos => {
-            setInfo(datos)
-            setCargando(false)
-        })
-        .catch( error => console.log(error))
+        const fetchData = async () => {
+            try {
+                let q;
+                if (tipoproducto) {
+                    q = query(collection(db, "productos"), where("nombre", "==", tipoproducto.toUpperCase()));
+                } else {
+                    q = collection(db, "productos");
+                }
 
-    }, [categoria, page])
+                const querySnapshot = await getDocs(q);
+                const obtenerDocumentos = querySnapshot.docs.map(element => ({ id: element.id, ...element.data() }));
+                setInfo(obtenerDocumentos);
+                setcantidadDatos(obtenerDocumentos.length)
+                setCargando(false);
+            } catch (error) {
+                console.log(error);
+                setCargando(false); 
+            }
+        };
+        fetchData();
+    }, [tipoproducto]);
 
-    return { info, cargando } 
-}
+    return { info, cargando, cantidadDatos };
+};
 
-export default useFetchProductosCategoria;
+export default useFetchProductos;
+
